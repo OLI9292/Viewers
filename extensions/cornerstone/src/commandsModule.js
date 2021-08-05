@@ -144,12 +144,10 @@ const commandsModule = ({ servicesManager }) => {
     nextImage: ({ viewports }) => {
       const enabledElement = getEnabledElement(viewports.activeViewportIndex);
       scroll(enabledElement, 1);
-      cornerstone.reset(enabledElement);
     },
     previousImage: ({ viewports }) => {
       const enabledElement = getEnabledElement(viewports.activeViewportIndex);
       scroll(enabledElement, -1);
-      cornerstone.reset(enabledElement);
     },
     getActiveViewportEnabledElement: ({ viewports }) => {
       const enabledElement = getEnabledElement(viewports.activeViewportIndex);
@@ -301,7 +299,7 @@ const commandsModule = ({ servicesManager }) => {
   const definitions = {
     jumpToImage: {
       commandFn: actions.jumpToImage,
-      storeContexts: [],
+      storeContexts: ['viewports'],
       options: {},
     },
     getNearbyToolData: {

@@ -47,6 +47,7 @@ export default {
         /** Do not trigger all viewports to render unnecessarily */
         jumpData.refreshViewports = false;
         commandsManager.runCommand('jumpToImage', jumpData);
+        commandsManager.runCommand('resetViewport');
       };
       return (
         <OHIFCornerstoneViewport {...props} onNewImage={onNewImageHandler} />
